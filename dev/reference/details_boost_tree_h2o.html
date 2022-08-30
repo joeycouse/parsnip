@@ -14,7 +14,7 @@ All trees in the ensemble are combined to produce a final prediction."><meta pro
     
     <a class="navbar-brand me-2" href="../index.html">parsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,9 +133,10 @@ around <code>h2o::h2o.xgboost()</code>.</p>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Model fit template:</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## agua::h2o_train_xgboost(x = missing_arg(), y = missing_arg(), </span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">##     col_sample_rate = integer(), ntrees = integer(), min_rows = integer(), </span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">##     max_depth = integer(), learn_rate = numeric(), min_split_improvement = numeric(), </span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">##     stopping_rounds = integer())</span></span></code></pre><p></p></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">##     weights = missing_arg(), validation_frame = missing_arg(), </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">##     col_sample_rate = integer(), ntrees = integer(), min_rows = integer(), </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">##     max_depth = integer(), learn_rate = numeric(), min_split_improvement = numeric(), </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">##     stopping_rounds = integer())</span></span></code></pre><p></p></div>
 </div>
 
 <div class="section">
@@ -165,9 +166,10 @@ around <code>h2o::h2o.xgboost()</code>.</p>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Model fit template:</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## agua::h2o_train_xgboost(x = missing_arg(), y = missing_arg(), </span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">##     col_sample_rate = integer(), ntrees = integer(), min_rows = integer(), </span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">##     max_depth = integer(), learn_rate = numeric(), min_split_improvement = numeric(), </span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">##     stopping_rounds = integer())</span></span></code></pre><p></p></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">##     weights = missing_arg(), validation_frame = missing_arg(), </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">##     col_sample_rate = integer(), ntrees = integer(), min_rows = integer(), </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">##     max_depth = integer(), learn_rate = numeric(), min_split_improvement = numeric(), </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">##     stopping_rounds = integer())</span></span></code></pre><p></p></div>
 </div>
 
 <div class="section">
@@ -204,11 +206,11 @@ sense as a count, <code>FALSE</code> indicates that the argument will be
 interpreted in its sense as a proportion.</p>
 <p><code>mtry</code> is a main model argument for
 <code><a href="boost_tree.html">boost_tree()</a></code> and
-<code><a href="rand_forest.html">rand_forest()</a></code>, and thus should not have an
-engine-specific interface. So, regardless of engine, <code>counts</code> defaults
-to <code>TRUE</code>. For engines that support the proportion
-interpretation—currently <code>"xgboost"</code>, <code>"xrf"</code> (via the rules package),
-and <code>"lightgbm"</code> (via the bonsai package)—the user can pass the
+<code><a href="rand_forest.html">rand_forest()</a></code>, and thus should not have
+an engine-specific interface. So, regardless of engine, <code>counts</code>
+defaults to <code>TRUE</code>. For engines that support the proportion
+interpretation (currently <code>"xgboost"</code> and <code>"xrf"</code>, via the rules
+package, and <code>"lightgbm"</code> via the bonsai package) the user can pass the
 <code>counts = FALSE</code> argument to <code><a href="set_engine.html">set_engine()</a></code> to supply <code>mtry</code> values
 within [0,1].</p>
 </div>

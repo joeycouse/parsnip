@@ -12,7 +12,7 @@ count data."><meta property="og:image" content="https://parsnip.tidymodels.org/l
     
     <a class="navbar-brand me-2" href="../index.html">parsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,8 +115,9 @@ a wrapper around <code>h2o::h2o.glm()</code> with
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Computational engine: h2o </span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Model fit template:</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## agua::h2o_train_glm(x = missing_arg(), y = missing_arg(), lambda = double(1), </span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">##     alpha = double(1), family = "poisson")</span></span></code></pre><p></p></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## agua::h2o_train_glm(x = missing_arg(), y = missing_arg(), weights = missing_arg(), </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">##     validation_frame = missing_arg(), lambda = double(1), alpha = double(1), </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">##     family = "poisson")</span></span></code></pre><p></p></div>
 </div>
 
 <div class="section">
@@ -125,8 +126,8 @@ a wrapper around <code>h2o::h2o.glm()</code> with
 
 <p>Factor/categorical predictors need to be converted to numeric values
 (e.g., dummy or indicator variables) for this engine. When using the
-formula method via <code><a href="fit.html">fit()</a></code>, parsnip will
-convert factor columns to indicators.</p>
+formula method via <code><a href="fit.html">fit()</a></code>, parsnip
+will convert factor columns to indicators.</p>
 <p>Predictors should have the same scale. One way to achieve this is to
 center and scale each so that each predictor has mean zero and a
 variance of one.</p>
